@@ -137,52 +137,52 @@ export default function CommunityPage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <MemberCard
-                name="Alex Johnson"
+                name="TBD"
                 role="President"
-                initials="AJ"
-                email="alex.j@example.com"
-                github="alexjohnson"
-                linkedin="alexjohnson-dev"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD-dev"
+                linkedin="TBD-dev"
               />
               <MemberCard
-                name="Priya Sharma"
+                name="TBD"
                 role="Vice President"
-                initials="PS"
-                email="priya.s@example.com"
-                github="priyasharma"
-                linkedin="priyasharma-eng"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD-vp"
+                linkedin="TBD-eng"
               />
               <MemberCard
-                name="Rohan Gupta"
+                name="TBD"
                 role="Events Lead"
-                initials="RG"
-                email="rohan.g@example.com"
-                github="rohangpt"
-                linkedin="rohan-gupta"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD-events"
+                linkedin="TBD-events"
               />
               <MemberCard
-                name="Sam Chen"
+                name="TBD"
                 role="Projects Lead"
-                initials="SC"
-                email="sam.c@example.com"
-                github="samchen"
-                linkedin="samchen-design"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD-projects"
+                linkedin="TBD-design"
               />
               <MemberCard
-                name="Meera Kumar"
+                name="TBD"
                 role="Community Lead"
-                initials="MK"
-                email="meera.k@example.com"
-                github="meerak"
-                linkedin="meera-kumar"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD"
+                linkedin="TBD"
               />
                <MemberCard
-                name="Dev Patel"
+                name="TBD"
                 role="Treasurer"
-                initials="DP"
-                email="dev.p@example.com"
-                github="devpatel"
-                linkedin="dev-patel"
+                initials="TBD"
+                email="TBD@example.com"
+                github="TBD-finance"
+                linkedin="TBD"
               />
             </div>
           </section>

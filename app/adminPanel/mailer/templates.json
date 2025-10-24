@@ -1,0 +1,26 @@
+[
+  {
+    "id": "welcome",
+    "name": "Welcome New Member",
+    "subject": "Welcome to the GCC KEC!",
+    "body": "## Welcome to the Club!\n\nHi [Name],\n\nWe are so excited to have you join the General Coding Club at KEC.\n\nHere are a few next steps:\n* Join our [Discord Server](https://discord.gg/example)\n* Follow us on [GitHub](https://github.com/gcc-kec)\n\nWe look forward to seeing you at our next event!\n\nBest,\nThe GCC Team"
+  },
+  {
+    "id": "event-announce",
+    "name": "Event Announcement",
+    "subject": "[EVENT] Announcing: [Event Name]",
+    "body": "# You're Invited! 🚀\n\nHi everyone,\n\nWe are thrilled to announce our next event: **[Event Name]**!\n\n* **Date:** [Date]\n* **Time:** [Time]\n* **Location:** [Location/Link]\n\n[Add a short description of the event here.]\n\n[Register Here](https://forms.gle/example)\n\nSee you there!"
+  },
+  {
+    "id": "contest-reminder",
+    "name": "Contest Reminder",
+    "subject": "Reminder: [Contest Name] is Tomorrow!",
+    "body": "## Don't Forget! ⏰\n\nHi coders,\n\nThis is a quick reminder that our coding contest, **[Contest Name]**, is happening tomorrow, [Date] at [Time].\n\nBe sure to [Register Here](https://forms.gle/example) if you haven't already.\n\nGet ready to solve some problems!\n\nGood luck,\nThe GCC Team"
+  },
+  {
+    "id": "project-showcase",
+    "name": "Project Showcase Call",
+    "subject": "Showcase Your Project with GCC!",
+    "body": "## Built Something Cool?\n\nHi [Name],\n\nWe're looking for awesome projects built by our members to feature in our next **Member Showcase**!\n\nIf you have a project you'd like to share, please reply to this email with:\n1.  Project Name\n2.  A brief description\n3.  Link to your GitHub repo\n4.  (Optional) A live demo link\n\nWe can't wait to see what you've built!\n\nBest,\nThe GCC Team"
+  }
+]

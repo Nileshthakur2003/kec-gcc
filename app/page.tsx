@@ -32,7 +32,11 @@ const buttonVariants = ({ variant = 'default', size = 'default' }: ButtonVariant
 /**
  * Simulated Button component
  */
-const Button = ({ className = '', variant = 'default', size = 'default', ...props }) => (
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariantProps & {
+  className?: string;
+};
+
+const Button: React.FC<ButtonProps> = ({ className = '', variant = 'default', size = 'default', ...props }) => (
   <button
     className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-black ${buttonVariants({ variant, size })} ${className}`}
     {...props}
