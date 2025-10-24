@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+-----
 
-First, run the development server:
+# GCC KEC - Official Club Website
+
+This is the official website for the **General Coding Club (GCC) at Katihar Engineering College (KEC)**. It's a modern, responsive frontend application built with Next.js and Tailwind CSS, designed to be the central hub for all club-related information.
+
+The website features a sleek, "glassy" dark-mode theme and is fully mobile-first.
+
+## 🚀 Pages & Features
+
+The website currently consists of four main pages:
+
+1.  **Home:** A landing page introducing the club, its mission, and a quick link to upcoming events.
+2.  **Events:** A dedicated page with a tabbed view to display **Upcoming** and **Past** events, including workshops, contests, and sessions.
+3.  **Projects:** A showcase page with a tabbed view for **Club Projects** and **Member Showcase**. Each project card displays the tech stack, links to code/demos, and an accordion to view involved members.
+4.  **Community:** A "Meet the Team" page displaying the core club leads with their roles and social links (GitHub, LinkedIn, Email). It also includes a call-to-action to join the community.
+
+## 🛠️ Tech Stack
+
+  * **Framework:** [Next.js](https://nextjs.org/) (using App Router)
+  * **Library:** [React](https://reactjs.org/)
+  * **Language:** [TypeScript](https://www.typescriptlang.org/)
+  * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+  * **UI Philosophy:** Built using reusable, atomic components (`Card`, `Button`, `Separator`) to simulate a design system like [shadcn/ui](https://ui.shadcn.com/).
+  * **Icons:** Simulated `lucide-react` icons (embedded as inline SVGs for portability).
+
+## ⚙️ Getting Started
+
+Follow these instructions to get a local copy up and running for development and testing.
+
+### Prerequisites
+
+You need to have [Node.js](https://nodejs.org/en/) (v18.0 or later) and `npm` or `yarn` installed on your machine.
+
+### 1\. Clone the Repository
+
+Clone this project to your local machine:
+
+```bash
+git clone https://github.com/[YOUR-USERNAME]/[YOUR-REPO-NAME].git
+cd [YOUR-REPO-NAME]
+```
+
+### 2\. Install Dependencies
+
+Install all the required `npm` packages:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3\. Run the Development Server
+
+Start the local development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) with your browser to see the result. You can start editing the pages, and the app will auto-update as you make changes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is structured with components for each page.
 
-## Learn More
+```
+/app
+├── (pages)               # Main page routes
+│   ├── community
+│   │   └── page.tsx      # CommunityPage component
+│   ├── events
+│   │   └── page.tsx      # EventsPage component
+│   ├── projects
+│   │   └── page.tsx      # ProjectsPage component
+│   └── page.tsx          # HomePage component
+│
+├── layout.tsx            # Root layout
+└── globals.css           # Global styles
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  * **Simulated Components:** All UI components (like `Button`, `Card`, `Navbar`) and icons are self-contained within each page file (`page.tsx`). In a real-world project, these would be extracted into a separate `/components` directory for better reusability and maintenance.
