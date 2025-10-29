@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 import Code2 from '@/components/icons/code2';
 import MenuIcon from '@/components/icons/MenuIcon';
@@ -125,6 +126,7 @@ export default function CommunityPage() {
             </h1>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
               The core members & leads driving the General Coding Club forward.
+             
             </p>
           </div>
 
@@ -187,6 +189,16 @@ export default function CommunityPage() {
             </div>
           </section>
 
+          <Separator className="bg-zinc-700" />
+          <p className="text-center text-zinc-400">
+            If you are a member of GCC you would be able to verify membership here to see your vitual creds!
+         <br/>
+           <Link href="/club/community/member-verification/">
+              <Button variant="default" className="w-full sm:w-auto mt-4" >
+                  Verify Membership
+              </Button>
+            </Link>
+          </p>
           <Separator className="bg-zinc-700" />
 
           {/* Join Us CTA */}
