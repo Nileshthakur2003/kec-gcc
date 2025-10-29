@@ -6,10 +6,7 @@ import XIcon from '@/components/icons/XIcon';
 import React, { useState } from 'react';
 import Navbar from '@/components/custom/NavBar';
 
-
-
 // --- Simulated shadcn/ui Components ---
-
 type ButtonVariantProps = {
   variant?: 'default' | 'outline';
   size?: 'default' | 'icon';
@@ -29,9 +26,6 @@ const buttonVariants = ({ variant = 'default', size = 'default' }: ButtonVariant
   return `${variantClasses[variant]} ${sizeClasses[size]}`;
 };
 
-/**
- * Simulated Button component
- */
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariantProps & {
   className?: string;
 };
@@ -43,9 +37,6 @@ const Button: React.FC<ButtonProps> = ({ className = '', variant = 'default', si
   />
 );
 
-/**
- * Simulated Card component
- */
 const Card = ({ className = '', ...props }) => (
   <div
     className={`rounded-xl border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm text-white ${className}`}
@@ -53,9 +44,6 @@ const Card = ({ className = '', ...props }) => (
   />
 );
 
-/**
- * Simulated Separator component
- */
 const Separator = ({ className = '', ...props }) => (
   <div
     className={`shrink-0 bg-zinc-700 h-[1px] w-full ${className}`}
@@ -63,54 +51,42 @@ const Separator = ({ className = '', ...props }) => (
   />
 );
 
-
-// --- Main App Component (Scrollable) ---
-
+// --- Main App Component ---
 export default function App() {
   return (
-    <main className="min-h-screen w-full bg-black text-white font-sans">
-      {/* Add the modern navbar */}
+    <main className="min-h-screen w-full bg-black text-white font-sans scroll-smooth">
       <Navbar />
 
-      {/* Main content section, padded to avoid navbar overlap and allow scrolling */}
-      <section className="w-full px-4 pt-24 pb-16">
+      {/* Hero Section */}
+      <section id="home" className="w-full px-4 pt-24 pb-16">
         <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 text-center">
-          
-          {/* Logo (replaces Image component) */}
           <div className="p-4 bg-zinc-900/50 rounded-full border border-zinc-700 mt-10">
             <Code2 className="w-16 h-16 text-white" />
           </div>
 
-          {/* Hero Text */}
           <div className="space-y-4">
             <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
-               General Coding Club (GCC)
+              General Coding Club (GCC)
             </h1>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-              We host coding contests, hackathons, workshops @ KEC , and build a vibrant community of student developers.
+              We host coding contests, hackathons, workshops @ KEC, and build a vibrant community of student developers.
             </p>
           </div>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button className="w-full sm:w-auto">Participate</Button>
-            <Button variant="outline" className="w-full sm:w-auto">
-              View Events
-            </Button>
+            <Button variant="outline" className="w-full sm:w-auto">View Events</Button>
           </div>
 
           <Separator className="mt-10 bg-zinc-700" />
 
-          {/* --- NEW EVENTS SECTION --- */}
-          <section className="w-full space-y-6 mt-25">
-            <h2 className="text-4xl font-bold tracking-tight">
-              Upcoming Events
-            </h2>
-            
-            {/* Grid for event cards */}
+
+          {/* --- EVENTS SECTION --- */}
+          <section id="events" className="w-full space-y-6 mt-25">
+            <h2 className="text-4xl font-bold tracking-tight">Upcoming Events</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-              {/* Event Card 1 */}
+              {/* Event 1 */}
               <Card className="p-6 space-y-4 text-left flex flex-col justify-between">
                 <div className="space-y-1">
                   <span className="text-xs font-semibold uppercase text-blue-400">Workshop</span>
@@ -118,12 +94,12 @@ export default function App() {
                   <p className="text-sm text-zinc-400">Oct 30, 2025 | 6:00 PM IST</p>
                 </div>
                 <p className="text-zinc-300 text-sm">
-                  Learn the fundamentals of React, from components and props to state and hooks, and see how Next.js enhances it.
+                  Learn the fundamentals of React, from components and hooks to server rendering with Next.js.
                 </p>
                 <Button variant="outline" className="w-full mt-4">Register Now</Button>
               </Card>
 
-              {/* Event Card 2 */}
+              {/* Event 2 */}
               <Card className="p-6 space-y-4 text-left flex flex-col justify-between">
                 <div className="space-y-1">
                   <span className="text-xs font-semibold uppercase text-green-400">Contest</span>
@@ -131,12 +107,12 @@ export default function App() {
                   <p className="text-sm text-zinc-400">Nov 5, 2025 | 8:00 PM IST</p>
                 </div>
                 <p className="text-zinc-300 text-sm">
-                  Join our weekly competitive programming contest. Solve 3 problems in 90 minutes and climb the leaderboard!
+                  Join our weekly competitive programming contest and test your problem-solving speed!
                 </p>
                 <Button variant="outline" className="w-full mt-4">View Problemset</Button>
               </Card>
 
-              {/* Event Card 3 */}
+              {/* Event 3 */}
               <Card className="p-6 space-y-4 text-left flex flex-col justify-between">
                 <div className="space-y-1">
                   <span className="text-xs font-semibold uppercase text-purple-400">Session</span>
@@ -144,17 +120,64 @@ export default function App() {
                   <p className="text-sm text-zinc-400">Nov 12, 2025 | 5:00 PM IST</p>
                 </div>
                 <p className="text-zinc-300 text-sm">
-                  Getting ready for the big hackathon? Learn how to brainstorm, build an MVP, and pitch your idea effectively.
+                  Learn how to brainstorm ideas, form teams, and pitch effectively in hackathons.
                 </p>
                 <Button variant="outline" className="w-full mt-4">Join Session</Button>
               </Card>
-
             </div>
           </section>
-          {/* --- END OF EVENTS SECTION --- */}
-
         </div>
       </section>
+
+    {/* --- ABOUT SECTION --- */}
+          <section id="about" className="w-full py-24 bg-zinc-950 text-center px-4">
+            <h2 className="text-4xl font-bold mb-4">About Us</h2>
+            <p className="max-w-3xl mx-auto text-zinc-400 text-lg">
+              The General Coding Club (GCC) at KEC is dedicated to fostering coding excellence, innovation,
+              and collaboration among students. We conduct workshops, peer learning sessions, and open-source projects
+              to help members explore development, AI, and problem-solving skills.
+            </p>
+          </section>
+
+          {/* <Separator className="mt-10 bg-zinc-700" /> */}
+
+      {/* --- PROJECTS/INITIATIVES SECTION --- */}
+      <section id="initiatives" className="w-full py-24 bg-black text-center px-4">
+        <h2 className="text-4xl font-bold mb-8">Our Initiatives</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <Card className="p-6 text-left">
+            <h3 className="text-xl font-semibold mb-2">Hackathons & Innovation</h3>
+            <p className="text-zinc-400 text-sm">
+              Encouraging students to participate in national-level hackathons and build real-world impactful projects.
+            </p>
+          </Card>
+          <Card className="p-6 text-left">
+            <h3 className="text-xl font-semibold mb-2">Open Source Drives</h3>
+            <p className="text-zinc-400 text-sm">
+              Promoting open-source culture through events like Hacktoberfest and GitHub contribution sessions.
+            </p>
+          </Card>
+          <Card className="p-6 text-left">
+            <h3 className="text-xl font-semibold mb-2">Peer Learning</h3>
+            <p className="text-zinc-400 text-sm">
+              Weekly peer-to-peer coding sessions to enhance logical thinking and algorithmic problem-solving.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="w-full py-24 bg-zinc-950 text-center px-4">
+        <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
+        <p className="text-zinc-400 mb-8">
+          Have queries or want to collaborate? Drop us a message!
+        </p>
+        <Button className="mx-auto px-8">Contact Us</Button>
+      </section>
+
+      <footer className="py-6 text-center text-sm text-zinc-600 border-t border-zinc-800">
+        © 2025 General Coding Club, KEC. All rights reserved.
+      </footer>
     </main>
   );
 }
