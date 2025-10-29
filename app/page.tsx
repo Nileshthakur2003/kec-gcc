@@ -1,10 +1,9 @@
 "use client";
 
 import Code2 from '@/components/icons/code2';
-import MenuIcon from '@/components/icons/MenuIcon';
-import XIcon from '@/components/icons/XIcon';
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/custom/NavBar';
+import Link from 'next/link';
 
 // --- Simulated shadcn/ui Components ---
 type ButtonVariantProps = {
@@ -45,13 +44,10 @@ const Card = ({ className = '', ...props }) => (
 );
 
 const Separator = ({ className = '', ...props }) => (
-  <div
-    className={`shrink-0 bg-zinc-700 h-[1px] w-full ${className}`}
-    {...props}
-  />
+  <div className={`shrink-0 bg-zinc-700 h-[1px] w-full ${className}`} {...props} />
 );
 
-// --- Main App Component ---
+// --- Main Landing Page ---
 export default function App() {
   return (
     <main className="min-h-screen w-full bg-black text-white font-sans scroll-smooth">
@@ -80,6 +76,15 @@ export default function App() {
 
           <Separator className="mt-10 bg-zinc-700" />
 
+          {/* --- ABOUT SECTION --- */}
+          <section id="about" className="w-full py-24 bg-zinc-950 text-center px-4">
+            <h2 className="text-4xl font-bold mb-4">About Us</h2>
+            <p className="max-w-3xl mx-auto text-zinc-400 text-lg">
+              The General Coding Club (GCC) at KEC is dedicated to fostering coding excellence, innovation,
+              and collaboration among students. We conduct workshops, peer learning sessions, and open-source projects
+              to help members explore development, AI, and problem-solving skills.
+            </p>
+          </section>
 
           {/* --- EVENTS SECTION --- */}
           <section id="events" className="w-full space-y-6 mt-25">
@@ -129,19 +134,7 @@ export default function App() {
         </div>
       </section>
 
-    {/* --- ABOUT SECTION --- */}
-          <section id="about" className="w-full py-24 bg-zinc-950 text-center px-4">
-            <h2 className="text-4xl font-bold mb-4">About Us</h2>
-            <p className="max-w-3xl mx-auto text-zinc-400 text-lg">
-              The General Coding Club (GCC) at KEC is dedicated to fostering coding excellence, innovation,
-              and collaboration among students. We conduct workshops, peer learning sessions, and open-source projects
-              to help members explore development, AI, and problem-solving skills.
-            </p>
-          </section>
-
-          {/* <Separator className="mt-10 bg-zinc-700" /> */}
-
-      {/* --- PROJECTS/INITIATIVES SECTION --- */}
+      {/* --- INITIATIVES SECTION --- */}
       <section id="initiatives" className="w-full py-24 bg-black text-center px-4">
         <h2 className="text-4xl font-bold mb-8">Our Initiatives</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -166,13 +159,15 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* --- CONTACT SECTION --- */}
       <section id="contact" className="w-full py-24 bg-zinc-950 text-center px-4">
         <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
         <p className="text-zinc-400 mb-8">
           Have queries or want to collaborate? Drop us a message!
         </p>
-        <Button className="mx-auto px-8">Contact Us</Button>
+        <Link href="/contact" className="inline-block">
+          <Button className="mx-auto px-8">Contact Us</Button>
+        </Link>
       </section>
 
       <footer className="py-6 text-center text-sm text-zinc-600 border-t border-zinc-800">
