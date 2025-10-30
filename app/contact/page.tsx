@@ -6,7 +6,7 @@ import Navbar from "@/components/custom/NavBar";
 
 export default function ContactPage() {
   return (
-    <main className="h-screen w-screen bg-black text-white overflow-hidden relative flex flex-col">
+    <main className="h-screen w-screen bg-black text-white overflow-scroll lg:overflow-hidden relative flex flex-col">
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 border-b border-zinc-800 bg-black/80 backdrop-blur-lg">
         <Navbar />

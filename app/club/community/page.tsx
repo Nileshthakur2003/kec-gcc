@@ -10,6 +10,7 @@ import XIcon from '@/components/icons/XIcon';
 import MailIcon from '@/components/icons/MailIcon';
 import LinkedinIcon from '@/components/icons/LinkedinIcon';
 import Navbar from '@/components/custom/NavBar';
+import { memberData } from './member-verification/members';
 
 type ButtonVariantProps = {
   variant?: 'default' | 'outline';
@@ -138,54 +139,19 @@ export default function CommunityPage() {
               Core Leads
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <MemberCard
-                name="TBD"
-                role="President"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD-dev"
-                linkedin="TBD-dev"
-              />
-              <MemberCard
-                name="TBD"
-                role="Vice President"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD-vp"
-                linkedin="TBD-eng"
-              />
-              <MemberCard
-                name="TBD"
-                role="Events Lead"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD-events"
-                linkedin="TBD-events"
-              />
-              <MemberCard
-                name="TBD"
-                role="Projects Lead"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD-projects"
-                linkedin="TBD-design"
-              />
-              <MemberCard
-                name="TBD"
-                role="Community Lead"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD"
-                linkedin="TBD"
-              />
-               <MemberCard
-                name="TBD"
-                role="Treasurer"
-                initials="TBD"
-                email="TBD@example.com"
-                github="TBD-finance"
-                linkedin="TBD"
-              />
+
+             {memberData.map((member) => (
+          <MemberCard
+            key={member.email}         // unique key for React
+            name={member.name}
+            role={member.role}
+            initials={member.initials}
+            email={member.email}
+            github={member.github}
+            linkedin={member.linkedin}
+          />
+      ))} 
+             
             </div>
           </section>
 

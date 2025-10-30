@@ -30,7 +30,10 @@ function Navbar() {
           <a href="/club/community" className="text-sm text-zinc-400 hover:text-white transition-colors">
             Community
           </a>
-          <Button variant="default">
+          <a href="/club/policy" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            Policy
+          </a>
+          <Button variant="link">
             Participate
           </Button>
         </div>

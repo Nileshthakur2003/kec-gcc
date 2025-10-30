@@ -6,7 +6,7 @@ import MenuIcon from '@/components/icons/MenuIcon';
 import XIcon from '@/components/icons/XIcon';
 import CalendarDays from '@/components/icons/CalendarDays';
 import Navbar from '@/components/custom/NavBar';
-
+import { eventsData } from './events-data';
 
 
 // --- Simulated shadcn/ui Components ---
@@ -91,30 +91,18 @@ const EventCard = ({ title, date, description, type, typeColor, buttonText, butt
 // --- Event Grid Components ---
 const UpcomingEvents = () => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <EventCard
-      type="Workshop"
-      typeColor="#34d399" // green-400
-      title="Intro to React & Next.js"
-      date="Oct 30, 2025 | 6:00 PM IST"
-      description="Learn the fundamentals of React, from components and props to state and hooks, and see how Next.js enhances it."
-      buttonText="Register Now"
-    />
-    <EventCard
-      type="Contest"
-      typeColor="#f87171" // red-400
-      title="GCC Weekly 'CodeSprint'"
-      date="Nov 5, 2025 | 8:00 PM IST"
-      description="Join our weekly competitive programming contest. Solve 3 problems in 90 minutes and climb the leaderboard!"
-      buttonText="View Problemset"
-    />
-    <EventCard
-      type="Session"
-      typeColor="#c084fc" // purple-400
-      title="Hackathon Prep 101"
-      date="Nov 12, 2025 | 5:00 PM IST"
-      description="Getting ready for the big hackathon? Learn how to brainstorm, build an MVP, and pitch your idea effectively."
-      buttonText="Join Session"
-    />
+    {eventsData.map((event, index) => (
+      <EventCard
+        key={index}
+        type={event.type}
+        typeColor={event.typeColor}
+        title={event.title}
+        date={event.date}
+        description={event.description}
+        buttonText="Register Now"
+        buttonVariant="default"
+      />
+    ))}
   </div>
 );
 

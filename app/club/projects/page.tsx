@@ -9,7 +9,7 @@ import UsersIcon from '@/components/icons/UsersIcon';
 import ChevronDownIcon from '@/components/icons/ChevronDown';
 import GlobeIcon from '@/components/icons/GlobeIcon';
 import Navbar from '@/components/custom/NavBar';
-
+import { projectsData } from './projects-data';
 
 type ButtonVariantProps = {
   variant?: 'default' | 'outline';
@@ -150,34 +150,19 @@ const ProjectCard = ({ title, description, status, statusColor, tech, repoLink, 
 // --- Project Grid Components (UPDATED with members) ---
 const ClubProjects = () => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <ProjectCard
-      title="GCC Club Website"
-      status="Active"
-      statusColor="#34d399" // green-400
-      description="The official website for the General Coding Club @ KEC. Built to showcase events, projects, and our community."
-      tech={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
-      repoLink="https://github.com/gcc-kec/club-website"
-      demoLink="#"
-      members={["Alex Johnson", "Priya Sharma", "Rohan Gupta"]}
-    />
-    <ProjectCard
-      title="AIVerse Discord Bot"
-      status="Active"
-      statusColor="#34d399" // green-400
-      description="A multi-functional Discord bot for the AIVerse club, featuring session reminders, resource linking, and Q&A moderation."
-      tech={["Python", "discord.py", "Firebase"]}
-      repoLink="https://github.com/averse-kec/discord-bot"
-      members={["Sam Chen", "Meera Kumar"]}
-    />
-    <ProjectCard
-      title="KEC Event Alerter"
-      status="Completed"
-      statusColor="#9ca3af" // gray-400
-      description="A simple web scraper and notification service that alerts students about new notices and events on the college website."
-      tech={["Node.js", "Puppeteer", "Nodemailer"]}
-      repoLink="https://github.com/gcc-kec/kec-alerter"
-      members={["Rohan Gupta"]}
-    />
+    {projectsData.map((project) => (
+      <ProjectCard
+        key={project.title}
+        title={project.title}
+        status={project.status}
+        statusColor={project.statusColor}
+        description={project.description}
+        tech={project.tech}
+        repoLink={project.repoLink}
+        demoLink={project.demoLink}
+        members={project.members}
+      />
+    ))}
   </div>
 );
 
